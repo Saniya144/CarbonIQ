@@ -39,18 +39,38 @@ except Exception as e:
     st.error(f"Error connecting to backend: {e}")
 
 st.markdown("## ♻️ Scope Breakdown")
-scope_data = requests.get(f"{BACKEND_URL}/analytics/scope_breakdown").json()
-df_scope = pd.DataFrame(list(scope_data.items()), columns=["Scope", "Emissions (kgCO2e)"])
-fig_scope = px.pie(df_scope, names="Scope", values="Emissions (kgCO2e)",
-                   color_discrete_sequence=px.colors.qualitative.Set2)
-st.plotly_chart(fig_scope)
+try:
+    res = requests.get(f"{BACKEND_URL}/analytics/scope_breakdown")
+    if res.status_code == 200:
+        scope_data = res.json()
+        if scope_data:
+            df_scope = pd.DataFrame(list(scope_data.items()), columns=["Scope", "Emissions (kgCO2e)"])
+            fig_scope = px.pie(df_scope, names="Scope", values="Emissions (kgCO2e)",
+                               color_discrete_sequence=px.colors.qualitative.Set2)
+            st.plotly_chart(fig_scope)
+        else:
+            st.warning("No scope breakdown data available.")
+    else:
+        st.error("Failed to retrieve scope breakdown data.")
+except Exception as e:
+    st.error(f"Error connecting to backend: {e}")
 
 st.markdown("## 🔮 Emission Forecast (Next 3 Months)")
-forecast = requests.get(f"{BACKEND_URL}/analytics/forecast").json()
-df_forecast = pd.DataFrame(forecast)
-st.dataframe(df_forecast)
+try:
+    res = requests.get(f"{BACKEND_URL}/analytics/forecast")
+    if res.status_code == 200:
+        forecast = res.json()
+        if forecast:
+            df_forecast = pd.DataFrame(forecast)
+            st.dataframe(df_forecast)
 
-if not df_forecast.empty:
-    fig_forecast = px.line(df_forecast, x="month", y="predicted_emissions",
-                           markers=True, title="Predicted Emissions (kgCO2e)")
-    st.plotly_chart(fig_forecast)
+            if not df_forecast.empty:
+                fig_forecast = px.line(df_forecast, x="month", y="predicted_emissions",
+                                       markers=True, title="Predicted Emissions (kgCO2e)")
+                st.plotly_chart(fig_forecast)
+        else:
+            st.warning("No forecast data available.")
+    else:
+        st.error("Failed to retrieve forecast data.")
+except Exception as e:
+    st.error(f"Error connecting to backend: {e}")
