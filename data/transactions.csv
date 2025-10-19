@@ -1,0 +1,21 @@
+date,description,amount,category,unit,quantity,emission_scope
+2025-01-10,Office heating (gas),350,natural_gas,therm,70,scope1
+2025-01-25,Employee commute - carpool,420,commuting,km,900,scope3
+2025-02-05,Cloud compute servers,800,electricity,kWh,1200,scope2
+2025-02-22,Business flight BOS->SFO,1800,flight,hour,15,scope3
+2025-03-04,Office lighting & AC,600,electricity,kWh,900,scope2
+2025-03-28,Company delivery van fuel,500,vehicle_fuel,liter,180,scope1
+2025-04-15,Remote work home power,200,electricity,kWh,300,scope2
+2025-04-27,Video conferencing servers,400,cloud_compute,kWh,450,scope2
+2025-05-08,Employee commute - metro,250,commuting,km,700,scope3
+2025-05-21,Office heating (gas),420,natural_gas,therm,80,scope1
+2025-06-11,Team flight NYC->London,2400,flight,hour,20,scope3
+2025-06-28,Office AC peak load,700,electricity,kWh,950,scope2
+2025-07-03,Company EV charging,150,electricity,kWh,300,scope2
+2025-07-19,Staff commute (bus),220,commuting,km,600,scope3
+2025-08-10,Server cooling systems,650,electricity,kWh,1000,scope2
+2025-08-25,Freight truck delivery,950,logistics,km,1500,scope3
+2025-09-05,Office heating maintenance,400,natural_gas,therm,75,scope1
+2025-09-22,Hybrid conference travel,1500,flight,hour,10,scope3
+2025-10-09,Cloud storage power usage,350,electricity,kWh,500,scope2
+2025-10-15,Company EV charging,180,electricity,kWh,320,scope2
