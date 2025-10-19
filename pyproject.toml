@@ -1,0 +1,37 @@
+
+[project]
+name = "carboniq"
+version = "0.1.0"
+description = "CarbonIQ - AI-assisted Carbon Accounting & Emissions Forecasting (Week 1 scaffold)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "pydantic>=2.7.0",
+    "sqlalchemy>=2.0.30",
+    "python-dotenv>=1.0.1",
+    "pandas>=2.2.0",
+    "python-multipart>=0.0.9",
+    "streamlit>=1.50.0",
+    "requests>=2.32.5",
+    "matplotlib>=3.10.7",
+    "plotly>=6.3.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.5.0",
+    "black>=24.0.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.black]
+line-length = 100
+
+[tool.uv]
+# Enables pip-compatible script runner: `uv run ...` and lockfile with `uv sync`
+# (Lovable/other tools can still use pip/venv if uv isn't installed)

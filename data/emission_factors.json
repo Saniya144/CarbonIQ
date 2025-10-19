@@ -1,0 +1,37 @@
+[
+  {
+    "category": "electricity",
+    "unit": "kWh",
+    "factor_kgco2e_per_unit": 0.42
+  },
+  {
+    "category": "natural_gas",
+    "unit": "therm",
+    "factor_kgco2e_per_unit": 5.31
+  },
+  {
+    "category": "flight",
+    "unit": "hour",
+    "factor_kgco2e_per_unit": 180.0
+  },
+  {
+    "category": "vehicle_fuel",
+    "unit": "liter",
+    "factor_kgco2e_per_unit": 2.31
+  },
+  {
+    "category": "commuting",
+    "unit": "km",
+    "factor_kgco2e_per_unit": 0.18
+  },
+  {
+    "category": "cloud_compute",
+    "unit": "kWh",
+    "factor_kgco2e_per_unit": 0.35
+  },
+  {
+    "category": "logistics",
+    "unit": "km",
+    "factor_kgco2e_per_unit": 0.25
+  }
+]
