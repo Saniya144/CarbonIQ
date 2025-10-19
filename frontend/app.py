@@ -7,7 +7,7 @@ import plotly.express as px
 # -----------------------------
 # Backend API URL
 # -----------------------------
-BACKEND_URL = "http://127.0.0.1:8000"  # make sure FastAPI is running
+BACKEND_URL = st.secrets["API_BASE"]  # make sure FastAPI is running
 
 # -----------------------------
 # Streamlit Page Config

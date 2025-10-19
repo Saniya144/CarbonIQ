@@ -4,6 +4,7 @@ from .db.database import Base, engine, SessionLocal
 from .api.routes import router
 from .models.models import EmissionFactor
 import json, os
+from fastapi.middleware.cors import CORSMiddleware
 
 # Create tables on startup
 Base.metadata.create_all(bind=engine)
@@ -11,6 +12,15 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(title=settings.api_title, version=settings.api_version)
 
 app.include_router(router)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # or your actual Streamlit URL for better security
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 @app.on_event("startup")
 def load_default_factors():
