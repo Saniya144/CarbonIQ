@@ -7,6 +7,7 @@ BACKEND_URL = st.secrets["API_BASE"]
 
 st.title("📈 Analytics")
 
+st.write("Backend health:", requests.get(f"{BACKEND_URL}/health").text)
 
 st.subheader("📈 Emission Trends Over Time")
 
