@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 import plotly.express as px
 
-BACKEND_URL = "http://127.0.0.1:8000"
+BACKEND_URL = st.secrets["API_BASE"]
 
 st.title("📈 Analytics")
 
