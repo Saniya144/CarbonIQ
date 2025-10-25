@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 # Create tables on startup
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title=settings.api_title, version=settings.api_version)
+app = FastAPI(title=settings.api_title, version=settings.api_version, description="CarbonIQ — A Carbon Accounting & Emission Forecasting API")
 
 app.include_router(router)
 
