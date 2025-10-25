@@ -8,6 +8,8 @@ pandas>=2.2.0
 python-multipart>=0.0.9
 scikit-learn>=1.4.0
 numpy>=1.26.0
+fastapi-jwt-auth>=0.5.0
+passlib[bcrypt]>=1.7.4
 
 # Frontend dependencies
 streamlit>=1.31.0
