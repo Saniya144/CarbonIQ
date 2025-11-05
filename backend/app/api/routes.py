@@ -7,6 +7,7 @@ from ..models.models import EmissionFactor, Transaction
 from ..schemas.schemas import EmissionFactorCreate, EmissionFactorOut, TransactionOut
 from ..utils.csv_loader import read_transactions_csv
 from ..services.emissions import compute_emission_for_transaction
+from ..services.categorizer import predict_category_and_scope
 from datetime import datetime
 import numpy as np
 from sklearn.linear_model import LinearRegression
@@ -234,3 +235,37 @@ def generate_insights(db: Session = Depends(get_db)):
         insights.append(f"📅 Emissions {direction} by **{abs(pct_change):.1f}%** last month.")
 
     return {"insights": insights}
+
+# This new /ml/categorize endpoint will:
+# Receive the uploaded CSV.
+# Run every transaction description through the classifier.
+# Return the same CSV data + new columns:
+# predicted_category
+# confidence
+
+@router.post("/ml/categorize")
+async def categorize_transactions(file: UploadFile):
+    """
+    Accepts a CSV of transactions, predicts emission category and scope
+    for each row, and returns the annotated DataFrame as JSON.
+    """
+    df = pd.read_csv(file.file)
+
+    predicted_categories = []
+    predicted_scopes = []
+    category_confidences = []
+    scope_confidences = []
+
+    for desc in df["description"]:
+        preds = predict_category_and_scope(str(desc))
+        predicted_categories.append(preds["predicted_category"])
+        predicted_scopes.append(preds["predicted_scope"])
+        category_confidences.append(preds["category_confidence"])
+        scope_confidences.append(preds["scope_confidence"])
+
+    df["predicted_category"] = predicted_categories
+    df["category_confidence"] = category_confidences
+    df["predicted_scope"] = predicted_scopes
+    df["scope_confidence"] = scope_confidences
+
+    return df.to_dict(orient="records")

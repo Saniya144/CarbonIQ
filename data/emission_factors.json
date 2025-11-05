@@ -1,37 +1,100 @@
 [
   {
     "category": "electricity",
+    "scope": "scope2",
     "unit": "kWh",
-    "factor_kgco2e_per_unit": 0.42
+    "factor_kgco2e_per_unit": 0.50,
+    "notes": "U.S. average grid electricity; varies by region (EPA eGRID 2023)."
   },
   {
     "category": "natural_gas",
-    "unit": "therm",
-    "factor_kgco2e_per_unit": 5.31
+    "scope": "scope1",
+    "unit": "m3",
+    "factor_kgco2e_per_unit": 2.30,
+    "notes": "Direct combustion of natural gas for heating or cooking (EPA/BEIS)."
   },
   {
-    "category": "flight",
+    "category": "diesel",
+    "scope": "scope1",
+    "unit": "L",
+    "factor_kgco2e_per_unit": 2.70,
+    "notes": "Diesel fuel for vehicles or generators (IPCC default)."
+  },
+  {
+    "category": "gasoline",
+    "scope": "scope1",
+    "unit": "L",
+    "factor_kgco2e_per_unit": 2.30,
+    "notes": "Gasoline for vehicles; direct fuel combustion."
+  },
+  {
+    "category": "district_heat",
+    "scope": "scope2",
+    "unit": "kWh_th",
+    "factor_kgco2e_per_unit": 0.20,
+    "notes": "Purchased steam or district heat; varies by local energy mix."
+  },
+  {
+    "category": "air_travel",
+    "scope": "scope3",
     "unit": "hour",
-    "factor_kgco2e_per_unit": 180.0
+    "factor_kgco2e_per_unit": 90.00,
+    "notes": "Average emissions per passenger flight hour (short/medium haul)."
   },
   {
-    "category": "vehicle_fuel",
-    "unit": "liter",
-    "factor_kgco2e_per_unit": 2.31
+    "category": "hotel",
+    "scope": "scope3",
+    "unit": "night",
+    "factor_kgco2e_per_unit": 15.00,
+    "notes": "Hotel overnight stays; includes energy, water, and services."
   },
   {
-    "category": "commuting",
+    "category": "rail_travel",
+    "scope": "scope3",
+    "unit": "passenger_km",
+    "factor_kgco2e_per_unit": 0.05,
+    "notes": "Passenger rail travel; low-carbon mode of transport."
+  },
+  {
+    "category": "last_mile_taxi_ridehail",
+    "scope": "scope3",
     "unit": "km",
-    "factor_kgco2e_per_unit": 0.18
+    "factor_kgco2e_per_unit": 0.18,
+    "notes": "Taxi or ride-hailing trips; gasoline average per km."
+  },
+  {
+    "category": "employee_commute",
+    "scope": "scope3",
+    "unit": "km",
+    "factor_kgco2e_per_unit": 0.18,
+    "notes": "Employee car commute; can be refined by mode split."
   },
   {
     "category": "cloud_compute",
+    "scope": "scope3",
     "unit": "kWh",
-    "factor_kgco2e_per_unit": 0.35
+    "factor_kgco2e_per_unit": 0.50,
+    "notes": "Electricity used for cloud computing or data center workloads."
   },
   {
-    "category": "logistics",
-    "unit": "km",
-    "factor_kgco2e_per_unit": 0.25
+    "category": "purchased_goods",
+    "scope": "scope3",
+    "unit": "usd",
+    "factor_kgco2e_per_unit": 0.45,
+    "notes": "Spend-based emission factor for purchased goods and services."
+  },
+  {
+    "category": "waste_landfill",
+    "scope": "scope3",
+    "unit": "kg",
+    "factor_kgco2e_per_unit": 1.20,
+    "notes": "Average municipal solid waste sent to landfill."
+  },
+  {
+    "category": "refrigerants",
+    "scope": "scope1",
+    "unit": "kg",
+    "factor_kgco2e_per_unit": 1300.00,
+    "notes": "Represents R-410A GWP; replace with specific gas and GWP for accuracy."
   }
 ]

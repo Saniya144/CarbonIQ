@@ -1,21 +1,21 @@
-date,description,amount,category,unit,quantity,emission_scope
-2025-01-10,Office heating (gas),350,natural_gas,therm,70,scope1
-2025-01-25,Employee commute - carpool,420,commuting,km,900,scope3
-2025-02-05,Cloud compute servers,800,electricity,kWh,1200,scope2
-2025-02-22,Business flight BOS->SFO,1800,flight,hour,15,scope3
-2025-03-04,Office lighting & AC,600,electricity,kWh,900,scope2
-2025-03-28,Company delivery van fuel,500,vehicle_fuel,liter,180,scope1
-2025-04-15,Remote work home power,200,electricity,kWh,300,scope2
-2025-04-27,Video conferencing servers,400,cloud_compute,kWh,450,scope2
-2025-05-08,Employee commute - metro,250,commuting,km,700,scope3
-2025-05-21,Office heating (gas),420,natural_gas,therm,80,scope1
-2025-06-11,Team flight NYC->London,2400,flight,hour,20,scope3
-2025-06-28,Office AC peak load,700,electricity,kWh,950,scope2
-2025-07-03,Company EV charging,150,electricity,kWh,300,scope2
-2025-07-19,Staff commute (bus),220,commuting,km,600,scope3
-2025-08-10,Server cooling systems,650,electricity,kWh,1000,scope2
-2025-08-25,Freight truck delivery,950,logistics,km,1500,scope3
-2025-09-05,Office heating maintenance,400,natural_gas,therm,75,scope1
-2025-09-22,Hybrid conference travel,1500,flight,hour,10,scope3
-2025-10-09,Cloud storage power usage,350,electricity,kWh,500,scope2
-2025-10-15,Company EV charging,180,electricity,kWh,320,scope2
+date,description,amount,unit,quantity,business_unit,region,supplier
+2025-09-01,September electricity bill - Boston office,1200.00,kWh,2400,Operations,US-NE,National Grid
+2025-09-03,Natural gas refill for HQ boiler,780.00,m3,290,Facilities,US-MA,Eversource
+2025-09-05,Diesel purchase for delivery trucks,540.00,L,200,Logistics,US-MA,Shell
+2025-09-06,Gasoline refill for company vehicles,320.00,L,140,Sales,US-MA,Exxon
+2025-09-08,Quarterly district heating bill - NYC hub,900.00,kWh_th,4500,Operations,US-NY,Con Edison
+2025-09-10,Business flight BOS→SFO for client meeting,2200.00,hour,22,Consulting,US,United Airlines
+2025-09-12,Hotel accommodation for client meeting (4 nights),780.00,night,4,Consulting,US,Marriott
+2025-09-13,Amtrak trip for regional training,160.00,passenger_km,600,Sales,US-NE,Amtrak
+2025-09-15,Uber rides for client events,85.00,km,45,Sales,US-MA,Uber
+2025-09-16,Employee commuting distance estimate for week,0.00,km,600,All,US-MA,Internal
+2025-09-17,AWS EC2 cloud compute usage for analytics workloads,640.00,kWh,900,Engineering,US-VA,AWS
+2025-09-18,Procured new office desks and chairs,2200.00,usd,2200,Facilities,US-MA,Office Depot
+2025-09-19,Waste disposal and landfill pickup,130.00,kg,120,Operations,US-MA,City Services
+2025-09-20,Refrigerant R-410A top-up for HVAC maintenance,420.00,kg,0.75,Facilities,US-MA,HVAC Inc
+2025-09-22,Team flight NYC→CHI for workshop,980.00,hour,9,Consulting,US,Delta Airlines
+2025-09-24,Taxi rides for sales conference,90.00,km,50,Sales,US-MA,Lyft
+2025-09-25,Hotel stay for conference (3 nights),600.00,night,3,Sales,US-MA,Hilton
+2025-09-26,Natural gas boiler refill,620.00,m3,230,Facilities,US-MA,Eversource
+2025-09-27,Gasoline refill for service vans,240.00,L,110,Operations,US-MA,Shell
+2025-09-30,Electricity bill - NYC data center,1600.00,kWh,3100,Engineering,US-NY,Con Edison

@@ -10,6 +10,8 @@ scikit-learn>=1.4.0
 numpy>=1.26.0
 fastapi-jwt-auth>=0.5.0
 passlib[bcrypt]>=1.7.4
+transformers
+torch
 
 # Frontend dependencies
 streamlit>=1.31.0
